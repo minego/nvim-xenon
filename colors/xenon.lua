@@ -976,6 +976,14 @@ local highlight_groups = {
 	NvimDapVirtualText				= {fg=grey},
 	NvimDapVirtualTextError			= {fg=white, bg=red_dark, style='bold'},
 	NvimDapVirtualTextChanged		= {fg=red},
+
+	--[[ which-key.vim ]]
+	WhichKey			= {fg=white, style='bold'},	-- the key
+	-- WhichKeyGroup	= 'Keyword',				-- a group
+	-- WhichKeySeparator= 'DiffAdded',				-- the separator between the key and its label
+	-- WhichKeyDesc		= 'Identifier',				-- the label of the key
+	-- WhichKeyFloat	= 'NormalFloat',			-- Normal in the popup window
+	-- WhichKeyValue	= 'Comment',				-- used by plugins that provide values
 }
 
 --[[ Step 5: Terminal Colors
