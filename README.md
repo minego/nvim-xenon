@@ -1,4 +1,4 @@
-# nvim-highlite
+# nvim-xenon
 
 ## Default Settings Preview
 
@@ -6,7 +6,7 @@
 
 ## Introduction
 
-`nvim-highlite` is a colorscheme template repository for Neovim 0.5+.
+`nvim-xenon` is a colorscheme template repository for Neovim 0.5+.
 
 This template's _defaults_ focus on:
 
@@ -32,12 +32,12 @@ The only prerequisite is Neovim 0.5+
 
 ### Creating Your Own
 
-1. Fork this repository, or clone it with `git clone https://github.com/Iron-E/nvim-highlite`.
-2. Follow the instructions in [`colors/highlite.vim`](colors/highlite.vim).
+1. Fork this repository, or clone it with `git clone https://github.com/Iron-E/nvim-xenon`.
+2. Follow the instructions in [`colors/xenon.vim`](colors/xenon.vim).
 	* If you are on a Unix system, use the [setup script](setup.sh) like so:
 	```sh
 	chmod +x ./setup.sh
-	./setup.sh highlite <colorscheme>
+	./setup.sh xenon <colorscheme>
 	```
 	Where `<colorscheme>` is the name of your desired colorscheme.
 	* If you are on Windows, rename the files manually.
@@ -59,7 +59,7 @@ Whenever you want to update from then on, you can run the [update script](update
 
 	return require('packer').startup {function(use)
 		use {'wbthomason/packer.nvim', opt=true}
-		use 'Iron-E/nvim-highlite'
+		use 'Iron-E/nvim-xenon'
 	end}
 	```
 2. Specify this colorscheme as your default colorscheme in the `init.vim`:
@@ -68,19 +68,19 @@ Whenever you want to update from then on, you can run the [update script](update
 	" This plugin is fully compatible with 8-bit, 16-bit, and 24-bit colors.
 	set termguicolors
 	" Use the colorscheme
-	colorscheme highlite
+	colorscheme xenon
 	```
 	Or using `init.lua`:
 	```lua
 	vim.opt.termguicolors = true
-	vim.api.nvim_command 'colorscheme highlite'
+	vim.api.nvim_command 'colorscheme xenon'
 	```
 
 ## Usage
 
-This repository in itself is an example of how to use `nvim-highlite`. Aside from this, the following colorschemes are built using `nvim-highlite`:
+This repository in itself is an example of how to use `nvim-xenon`. Aside from this, the following colorschemes are built using `nvim-xenon`:
 
-* [nord-lite](https://github.com/NarutoXY/nvim-highlite)
+* [nord-lite](https://github.com/NarutoXY/nvim-xenon)
 * [nvim-deus](https://github.com/tandy1229/nvim-deus)
 * [nvim-deus](https://github.com/theniceboy/nvim-deus)
 * [nvim-soluarized](https://github.com/Iron-E/nvim-soluarized)
@@ -89,13 +89,13 @@ This repository in itself is an example of how to use `nvim-highlite`. Aside fro
 
 ### As Dependency
 
-Below is an example of how to use `nvim-highlite` as a dependency.
+Below is an example of how to use `nvim-xenon` as a dependency.
 
-* See `:h highlite-usage` for more.
+* See `:h xenon-usage` for more.
 
 ```lua
--- Import nvim-highlite
-local highlite = require('highlite')
+-- Import nvim-xenon
+local xenon = require('xenon')
 
 -- First, define some colors
 local red = {'#FF0000', 1, 'red'}
@@ -103,23 +103,23 @@ local black = {'#000000', 0, 'black'}
 local white = {'#FFFFFF', 255, 'white'}
 
 -- Highlight 'Identifier'
-highlite.highlight('Identifier', {bg=red, fg=black, style='bold'})
+xenon.highlight('Identifier', {bg=red, fg=black, style='bold'})
 
 -- Highlight 'Function' conditionally according to background color.
-highlite.highlight('Function', {bg=black, fg=red, light={bg=white}})
+xenon.highlight('Function', {bg=black, fg=red, light={bg=white}})
 
 -- Link 'Example' to 'Identifier'
-highlite.highlight('Example', 'Identifier')
+xenon.highlight('Example', 'Identifier')
 
 -- You can also reference specific attributes of another highlight group.
-highlite.highlight('AnotherExample', {bg=highlite.group'SpellBad'.bg, fg=white})
+xenon.highlight('AnotherExample', {bg=xenon.group'SpellBad'.bg, fg=white})
 ```
 
 ### As Template
 
-Below is an example of how to use `nvim-highlite` as a template.
+Below is an example of how to use `nvim-xenon` as a template.
 
-* See [`highlite.vim`](colors/highlite.vim) for more.
+* See [`xenon.vim`](colors/xenon.vim) for more.
 
 ```lua
 -- First, define some colors
@@ -149,22 +149,22 @@ local highlight_groups = {
 When using this plugin, it is important to know that you can't just run `:hi` on a highlight group and expect that its changes will be retained. You must attach them to the `ColorScheme` `autocmd` event, as shown below:
 
 ```vim
-packadd nvim-highlite
+packadd nvim-xenon
 set termguicolors "optional
 
 " WRONG! Don't do this.
 hi! Error guifg=#000000 guibg=#FFFFFF
 
 " Do this instead.
-augroup Highlite
-	" You can also use `highlite.highlight()` instead of `:hi!`
-	autocmd ColorScheme highlite hi! Error guifg=#000000 guibg=#FFFFFF
+augroup xenon
+	" You can also use `xenon.highlight()` instead of `:hi!`
+	autocmd ColorScheme xenon hi! Error guifg=#000000 guibg=#FFFFFF
 augroup end
 
-colorscheme highlite
+colorscheme xenon
 ```
 
-Of course, substitute `highlite` with the name of your colorscheme.
+Of course, substitute `xenon` with the name of your colorscheme.
 
 > Why am I receiving `E5108: Error executing lua [string ":lua"]:1: module '<colorscheme>' not found`?
 
