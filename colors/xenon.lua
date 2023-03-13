@@ -315,7 +315,7 @@ local highlight_groups = {
 	debugBreakpoint	= 'ErrorMsg',
 	debugPC			= 'ColorColumn',
 	LineNr			= {fg=gray},
-	QuickFixLine	= function(self) return {bg=self.StatusLine.bg} end,
+	QuickFixLine	= {fg=black, bg=gray_dark},
 	Visual			= {style='inverse'},
 	VisualNOS		= {bg=gray_darker},
 
