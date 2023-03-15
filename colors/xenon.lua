@@ -302,9 +302,9 @@ local highlight_groups = {
 
 	--[[ 4.2.2. Separators]]
 	FloatBorder		= {fg=gray},
-	TabLine			= function(self) return {fg=FG, bg=self.StatusLine.bg} end,
-	TabLineFill		= function(self) return {fg=self.TabLine.bg, bg=black} end,
-	TabLineSel		= function(self) return {fg=self.TabLine.fg, bg=highlight_group_normal.bg} end,
+	TabLine			= function(self) return {bg=black, fg=gray_dark, style='NONE'} end,
+	TabLineSel		= function(self) return {bg=gray_dark, fg=black, style='NONE'} end,
+	TabLineFill		= function(self) return {fg=self.TabLine.bg, bg=black, style='NONE'} end,
 	Title			= {style='bold'},
 	VertSplit		= {fg=white},
 
