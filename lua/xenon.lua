@@ -7,7 +7,8 @@
 --[[/* VARS */]]
 
 --- Which set of colors to use.
-local _USE_256 = tonumber(vim.go.t_Co) > 255 or string.find(vim.env.TERM, '256')
+-- local _USE_256 = tonumber(vim.go.t_Co) > 255 or string.find(vim.env.TERM, '256')
+local _USE_256 = 1
 
 --- Indicating nothing for a highlight field.
 local _NONE = 'NONE'
@@ -186,7 +187,7 @@ return setmetatable(highlite, {__call = function(self, normal, highlights, termi
 	color_name = nil
 
 	-- If we aren't using hex nor 256 colorsets.
-	if not (vim.go.termguicolors or _USE_256) then vim.go.t_Co = '16' end
+	-- if not (vim.go.termguicolors or _USE_256) then vim.go.t_Co = '16' end
 
 	-- Highlight the baseline.
 	self.highlight('Normal', normal)
